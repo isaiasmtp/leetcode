@@ -5,17 +5,16 @@ class Solution:
         if not s or not words:
             return []
 
-        word_length = len(words[0])
-        total_length = len(words) * word_length
-        result = []
+        res = []
         word_count = {}
+        word_length = len(words[0])
 
         for word in words:
             if word in word_count:
                 word_count[word] += 1
             else:
                 word_count[word] = 1
-        
+
         for i in range(word_length):
             left = i
             sub_count = {}
@@ -37,11 +36,9 @@ class Solution:
                         left += word_length
 
                     if count == len(words):
-                        result.append(left)
-
+                        res.append(left)
                 else:
                     sub_count.clear()
-                    count = 0 
+                    count = 0
                     left = j + word_length
-
-        return result
+        return res
