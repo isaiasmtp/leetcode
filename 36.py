@@ -17,7 +17,7 @@ class Solution:
                     return False
                 cols[c].add(board[r][c])
                 rows[c].add(board[r][c])
-                cols[(r // 3, c // 3)].add(board[r][c])
+                squares[(r // 3, c // 3)].add(board[r][c])
         return True
 
 board = [["5","3",".",".","7",".",".",".","."]
